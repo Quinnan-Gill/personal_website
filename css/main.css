@@ -1,0 +1,71 @@
+html {
+    background-color:  #293133;
+}
+
+#title {
+    border-radius: 3px;
+    padding-left: 23%;
+    text-shadow: 0px 0px 20px, 0px 0px 10px, 0px 0px 20px, 0px 0px 20px;
+}
+
+#shell {
+    color: white;
+    font-family: courier;
+    padding-left: 1%;
+}
+
+form {
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+input, textarea {
+    background-color: #293133;
+    border: none;
+    color: white;
+    font-family: courier;
+    font-size: 14;
+}
+
+table {
+    color: white;
+    font-family: courier;
+    width: 40%;
+}
+
+*:focus {
+    outline: none;
+}
+
+
+#yellow {
+    color: #ffff00;
+}
+
+#baby_blue {
+    color: #099fff;
+}
+
+#red {
+    color: #ff0000;
+}
+
+#green {
+    color: #00ff00;
+}
+
+#neon_blue {
+    color: #00ffff;
+}
+
+#pink {
+    color: #ff00ff;
+}
+
+#orange {
+    color: #ff6600;
+}
+
+#purple {
+    color: #cc00ff;
+}
