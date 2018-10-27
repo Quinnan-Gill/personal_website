@@ -1,0 +1,39 @@
+/* Visited color */
+.yellow:visited {
+    /* color: #ffff00; */
+    color: #00ffff;
+}
+
+.baby_blue:visited {
+    color: #099fff;
+}
+
+.red:visited {
+    /* color: #ff0000; */
+    color: #cc00ff;
+}
+
+.green:visited {
+    /* color: #00ff00; */
+    color: #ffff00;
+}
+
+.neon_blue:visited {
+    /* color: #00ffff; */
+    color: #ff6600;
+}
+
+.pink:visited {
+    /* color: #ff00ff; */
+    color: #ff0000;
+}
+
+.orange:visited {
+    /* color: #ff6600; */
+    color: #00ff00;
+}
+
+.purple:visited {
+    /* color: #cc00ff; */
+    color: #ff00ff;
+}

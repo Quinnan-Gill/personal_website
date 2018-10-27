@@ -31,7 +31,10 @@ function prompt() {
 function runExeCmd(e) {
     if (e.keyCode == 13) {
         var input = document.getElementById("exe_cmd_" + count_cmd);
+
         var cmd = input.value.trim("\n");
+
+        cmd = sanitize_cmd(cmd);
 
         // Render the field useless
         input.removeAttribute("onblur");
@@ -46,6 +49,11 @@ function runExeCmd(e) {
             case "resume":
                 resume_cmd();
                 break;
+            case "links":
+                links_cmd();
+                break;
+            case "about_me":
+                about_me_cmd();
             default:
                 default_cmd(cmd);
         }
@@ -54,8 +62,18 @@ function runExeCmd(e) {
     }
 }
 
+function sanitize_cmd(cmd) {
+    var re_lt = new RegExp("<", "g");
+    var re_gt = new RegExp(">", "g");
+
+    cmd = cmd.replace(re_lt, "&lt;");
+    cmd = cmd.replace(re_gt, "&gt;");
+
+    return cmd;
+}
+
 function help_cmd() {
-    var cmd_list = ["help", "resume"];
+    var cmd_list = ["help", "resume", "links", "about_me"];
 
     var blocks = 4;
     var groups = cmd_list.map( function(e, i){
@@ -63,6 +81,7 @@ function help_cmd() {
     }).filter(function(e){ return e; });
 
     var cmd_table = document.createElement("table");
+    cmd_table.setAttribute("id", "help");
 
     for(var i=0; i < groups.length; i++) {
         let table_row = document.createElement("tr");
@@ -81,7 +100,70 @@ function help_cmd() {
 }
 
 function resume_cmd() {
-    $("div#shell").append("Stuff for resume command");
+    makeAjaxCall("assets/resume.html", resume_display);
+}
+
+function resume_display(data) {
+    var color_wheel = new ColorWheel();
+
+    var pointer = color_wheel.create_pointer();
+    var key = pointer[0];
+    var header_color = pointer[1];
+
+    $("div#shell").append(data);
+
+    var resume_points = document.getElementsByClassName("color");
+    var resume_data = document.getElementsByClassName("box");
+    while(resume_points.length) {
+        let resume_color = color_wheel.iterate(key);
+
+        resume_points[0].className = resume_color + "_cell";
+        resume_data[0].className =  resume_color;
+    }
+
+    var skills = document.getElementsByClassName("skill");
+
+    while(skills.length) {
+        let skill_color = color_wheel.iterate(key);
+
+        skills[0].className = skill_color;
+    }
+
+    prompt();
+}
+
+function links_cmd() {
+    makeAjaxCall("assets/links.html", place_links);
+}
+
+function place_links(data) {
+    $("div#shell").append(data);
+
+    var color_wheel = new ColorWheel();
+
+    var pointer = color_wheel.create_pointer();
+    var key = pointer[0];
+
+    var link_color = document.getElementsByClassName("special_link");
+    console.log(link_color);
+    while(link_color.length) {
+        let color = color_wheel.iterate(key);
+
+        link_color[0].className = color;
+        console.log(link_color.length);
+    }
+
+    prompt();
+
+}
+
+function about_me_cmd() {
+    makeAjaxCall("assets/about_me.txt", post_about);
+}
+
+function post_about(data) {
+    $("$div#shell").append(data);
+
     prompt();
 }
 

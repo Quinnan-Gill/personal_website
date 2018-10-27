@@ -2,6 +2,10 @@ html {
     background-color:  #293133;
 }
 
+body {
+    link: #00ff00;
+}
+
 #title {
     border-radius: 3px;
     padding-left: 23%;
@@ -12,6 +16,12 @@ html {
     color: white;
     font-family: courier;
     padding-left: 1%;
+    padding-right: 1%;
+}
+
+#help {
+
+    width: 40%;
 }
 
 form {
@@ -30,7 +40,12 @@ input, textarea {
 table {
     color: white;
     font-family: courier;
-    width: 40%;
+}
+
+.resume {
+    color: white;
+    font-family: courier;
+    width: 100%;
 }
 
 *:focus {

@@ -1,0 +1,95 @@
+.header {
+    font-size: 24;
+}
+
+/* #skills {
+    text-shadow: 0px 0px 10px;
+} */
+
+#cell {
+    border-collapse: separate;
+    border-radius: 12px;
+    -moz-border-radius: 6px;
+
+    margin-left: 3px;
+    width:30%;
+
+    /* text-shadow: 0px 0px 10px; */
+}
+
+/* For the data borders */
+.yellow_cell {
+    border: 1px #ffff00 solid;
+    box-shadow: 1px 1px #ffff00;
+}
+
+.baby_blue_cell {
+    border: 1px #099fff solid;
+    box-shadow: 1px 1px #099fff;
+}
+
+.red_cell {
+    border: 1px #ff0000 solid;
+    box-shadow: 1px 1px #ff0000;
+}
+
+.green_cell {
+    border: 1px #00ff00 solid;
+    box-shadow: 1px 1px #00ff00;
+}
+
+.neon_blue_cell {
+    border: 1px #00ffff solid;
+    box-shadow: 1px 1px #00ffff;
+}
+
+.pink_cell {
+    border: 1px #ff00ff solid;
+    box-shadow: 1px 1px #ff00ff;
+}
+
+.orange_cell {
+    border: 1px #ff6600 solid;
+    box-shadow: 1px 1px #ff6600;
+}
+
+.purple_cell {
+    border: 1px #cc00ff solid;
+    box-shadow: 1px 1px #cc00ff;
+}
+
+/* For the inner table text color */
+.yellow {
+    color: #ffff00;
+    link: #ffff00;
+}
+
+.baby_blue {
+    color: #099fff;
+    link: #ffff00;
+}
+
+.red {
+    color: #ff0000;
+    link: #ffff00;
+}
+
+.green {
+    color: #00ff00;
+}
+
+.neon_blue {
+    color: #00ffff;
+}
+
+.pink {
+    color: #ff00ff;
+}
+
+.orange {
+    color: #ff6600;
+}
+
+.purple {
+    color: #cc00ff;
+}
