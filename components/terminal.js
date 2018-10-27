@@ -54,6 +54,7 @@ function runExeCmd(e) {
                 break;
             case "about_me":
                 about_me_cmd();
+                break;
             default:
                 default_cmd(cmd);
         }
@@ -158,11 +159,19 @@ function place_links(data) {
 }
 
 function about_me_cmd() {
-    makeAjaxCall("assets/about_me.txt", post_about);
+    makeAjaxCall("assets/about_me.html", post_about);
 }
 
 function post_about(data) {
-    $("$div#shell").append(data);
+    var color_wheel = new ColorWheel();
+    color = color_wheel.create_pointer()[1];
+
+    var div = document.createElement("div");
+    div.setAttribute("class", color);
+
+    div.innerHTML = data;
+
+    $("div#shell").append(div);
 
     prompt();
 }
